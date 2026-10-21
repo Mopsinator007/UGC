@@ -1,5 +1,10 @@
 name = "ugc"
+main = "worker.js"
 compatibility_date = "2026-10-21"
 
 [assets]
-directory = "."
+directory = "./public"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "235fa5b2d2b3442d89c5be8a80276c4c"
