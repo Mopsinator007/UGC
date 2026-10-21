@@ -1,12 +1,5 @@
 name = "ugc"
 compatibility_date = "2026-10-21"
 
-workers_dev = false
-preview_urls = false
-
 [assets]
 directory = "."
-
-[[kv_namespaces]]
-binding = "KV"
-id = "235fa5b2d2b3442d89c5be8a80276c4c"
