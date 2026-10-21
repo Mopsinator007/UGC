@@ -2,6 +2,7 @@ name = "ugc"
 main = "worker.js"
 compatibility_date = "2026-10-21"
 keep_vars = true
+routes = [{ pattern = "ugc.itsmadebymo.com", custom_domain = true }]
 
 [assets]
 directory = "./public"
