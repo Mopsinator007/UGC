@@ -8,8 +8,6 @@ main = "functions/api/data.js"
 [assets]
 directory = "."
 
-[vars]
-OWNER_EMAIL = "contact@itsmadebymo.com" # Trage hier optional deine E-Mail ein
 
 [[kv_namespaces]]
 binding = "KV"
