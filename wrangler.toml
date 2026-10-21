@@ -1,13 +1,8 @@
 name = "ugc"
 compatibility_date = "2026-10-21"
 
-# Hier wird definiert, wo deine Backend-Funktion liegt (laut deiner Ordnerstruktur)
-main = "functions/api/data.js"
-
-# Hier wird definiert, wo deine Frontend-Dateien liegen (das Root-Verzeichnis ".")
 [assets]
 directory = "."
-
 
 [[kv_namespaces]]
 binding = "KV"
