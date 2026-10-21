@@ -3,8 +3,8 @@ const enc = new TextEncoder();
 const hex = buf => [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
 const sha = async s => hex(await crypto.subtle.digest('SHA-256', enc.encode(s)));
 
-async function token(env) {
-  const key = await crypto.subtle.importKey('raw', enc.encode(env.PASSWORD), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+async function token(pw) {
+  const key = await crypto.subtle.importKey('raw', enc.encode(pw), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
   return hex(await crypto.subtle.sign('HMAC', key, enc.encode('ugc-hq-session')));
 }
 
@@ -15,9 +15,9 @@ function safeEq(a, b) {
   return r === 0;
 }
 
-async function authed(request, env) {
+async function authed(request, PW) {
   const m = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)hq_auth=([a-f0-9]{64})/);
-  return !!m && safeEq(m[1], await token(env));
+  return !!m && safeEq(m[1], await token(PW));
 }
 
 const cookie = (v, age) => `hq_auth=${v}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${age}`;
@@ -47,15 +47,16 @@ ${err ? '<div class="e">Falsches Passwort</div>' : ''}
 
 export default {
   async fetch(request, env) {
-    if (!env.PASSWORD) return new Response('PASSWORD missing. Worker sees: ' + Object.keys(env).join(', '), { status: 500 });
+    const PW = env.PASSWORD || (await env.KV.get('pw'));
+    if (!PW) return new Response('Kein Passwort gesetzt (KV-Key "pw" fehlt)', { status: 500 });
     const url = new URL(request.url);
 
     if (url.pathname === '/login' && request.method === 'POST') {
       const pw = String((await request.formData()).get('pw') || '');
-      if (safeEq(await sha(pw), await sha(env.PASSWORD))) {
+      if (safeEq(await sha(pw), await sha(PW))) {
         return new Response(null, {
           status: 303,
-          headers: { Location: '/', 'Set-Cookie': cookie(await token(env), 2592000) }
+          headers: { Location: '/', 'Set-Cookie': cookie(await token(PW), 2592000) }
         });
       }
       await new Promise(r => setTimeout(r, 1000));
@@ -66,7 +67,7 @@ export default {
       return new Response(null, { status: 303, headers: { Location: '/', 'Set-Cookie': cookie('', 0) } });
     }
 
-    if (!(await authed(request, env))) {
+    if (!(await authed(request, PW))) {
       if (url.pathname.startsWith('/api/')) return new Response('Unauthorized', { status: 401 });
       return loginPage(false);
     }
