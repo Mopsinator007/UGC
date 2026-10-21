@@ -38,6 +38,10 @@ textarea{min-height:230px;resize:vertical;line-height:1.6}
 .tag{display:inline-block;font-size:11px;color:var(--m)}
 @media(max-width:760px){.p,.pr,.ld{min-width:640px}}
 .pq{grid-template-columns:2fr .9fr .7fr 28px}
+.hh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}.hh h2{margin:0}
+.seg{display:inline-flex;gap:4px;background:var(--s2);border-radius:12px;padding:4px}
+.seg button{border:0;background:none;color:var(--m);padding:8px 16px;border-radius:9px;font:500 13px Inter,sans-serif;cursor:pointer}
+.seg button.on{background:var(--t);color:var(--bg)}
 .rc{margin-top:14px;background:#fbfaf6;color:#1a1a1a;font:12.5px/1.6 'Courier New',ui-monospace,monospace;padding:26px 22px 30px;position:relative;box-shadow:0 18px 40px rgba(0,0,0,.3)}
 .rc:before,.rc:after{content:"";position:absolute;left:0;right:0;height:12px;background-size:12px 12px}
 .rc:before{top:-12px;background-image:linear-gradient(45deg,#fbfaf6 6px,transparent 0),linear-gradient(315deg,#fbfaf6 6px,transparent 0);background-position:-6px 0,-6px 0}
@@ -72,13 +76,45 @@ nav button{padding:11px 6px;font-size:11px}
 <nav id="nav"></nav><div id="v"></div></div>
 <script>
 const K='mo_ugc_hq_v1',eur=n=>(+n||0).toLocaleString('de-DE')+' €';
+const PL='https://www.itsmadebymo.com/portfolio/ugc';
+const TD={en:`Hey [Name] 👋
+
+I'm Mo (@itsmadebymo), a videographer & UGC creator based in Germany. I love what you're doing with [Brand], especially [Product/Campaign].
+
+I create cinematic UGC that doesn't look like an ad but still sells: strong hooks, clean visuals and fast delivery.
+
+If you need fresh content for ads or social right now, I'd love to send you a concept plus examples tailored to your brand.
+
+Portfolio: ${PL}
+Mail: Content@itsmadebymo.com
+
+Best,
+Mo`,de:`Hey [Name] 👋
+
+ich bin Mo (@itsmadebymo), Videograf & UGC Creator aus Deutschland. Ich finde richtig stark, was ihr mit [Brand] macht, besonders [Produkt/Kampagne].
+
+Ich erstelle cinematic UGC, der nicht nach Werbung aussieht, aber verkauft: starke Hooks, saubere Optik und schnelle Lieferung.
+
+Wenn ihr gerade frischen Content für Ads oder Social Media braucht, schicke ich euch gern ein Konzept samt Beispielen, passend zu eurer Marke.
+
+Portfolio: ${PL}
+Mail: Content@itsmadebymo.com
+
+Liebe Grüße
+Mo`};
 const PS=['Briefing','Dreh','Edit','Review','Geliefert','Bezahlt'],LS=['Offen','Antwort','Kein Rücklauf','Call','Deal','Absage'],ET=['Dreh','Edit','Posten','Deadline','Call'];
 let S={view:'home',y:new Date().getFullYear(),m:new Date().getMonth(),
 projects:[{b:'Beispiel Brand',t:'Summer Launch Reel',d:'3 UGC Videos',p:750,dl:'',s:'Edit'}],
 prices:[{n:'UGC Video (15–30s)',p:250,q:0,r:0},{n:'Cinematic Ad (30–60s)',p:600,q:0,r:0},{n:'Hook-Variante',p:80,q:0,r:0},{n:'Foto-Paket (5 Bilder)',p:150,q:0,r:0},{n:'Raw Footage',p:100,q:0,r:0},{n:'Usage Rights (30 Tage)',p:150,q:0,r:0},{n:'Spark Ads / Whitelisting',p:200,q:0,r:0},
 {n:'Retainer Starter · 3 Videos/Monat',p:650,q:0,r:1},{n:'Retainer Growth · 6 Videos/Monat',p:1200,q:0,r:1},{n:'Retainer Premium · 10 Videos/Monat',p:1900,q:0,r:1}],
-cal:[],leads:[],tpl:`Hey [Name] 👋\n\nich bin Mo (@itsmadebymo) – Videograf & UGC Creator. Ich liebe, was ihr mit [Brand] macht, besonders [Produkt/Kampagne].\n\nIch erstelle cinematic UGC, der nicht nach Werbung aussieht, aber verkauft: starke Hooks, saubere Optik, schnelle Lieferung.\n\nWenn ihr gerade Content für Ads oder Social braucht, schicke ich euch gern ein Konzept + Beispiele passend zu eurer Marke.\n\nPortfolio: [Link]\nMail: Content@itsmadebymo.com\n\nLiebe Grüße\nMo`};
+cal:[],leads:[],tpl:TD.de,tplEn:TD.en,tl:'en'};
 try{Object.assign(S,JSON.parse(localStorage.getItem(K)||'{}'))}catch(e){}
+const TK=()=>S.tl=='de'?'tpl':'tplEn';
+const fix=()=>{
+if(/I'm Mo/.test(S.tpl)){S.tplEn=S.tpl;S.tpl=TD.de}
+S.tpl=S.tpl.replace('[Link]',PL);S.tplEn=S.tplEn.replace('[Link]',PL);
+if(S.tl!='de')S.tl='en'};
+fix();
 if(!S.rc)S.rc={c:'',rush:0,disc:0,vat:'0',term:3,n:'Gültig 14 Tage · Zahlung in 7 Tagen · 2 Revisionen inkl.'};
 if(!S.mig){S.mig=1;[['Konzept & Skript',120],['Extra Revision',50],['Vertical Cut-Downs (3×)',90],['Untertitel / Captions',40],['Musik-Lizenz',30],['Drohnen-Aufnahmen',150],['Exklusivität (30 Tage)',200],['Reisekosten / Spesen',0]].forEach(([n,p])=>S.prices.push({n,p,q:0,r:0}))}
 S.rc=Object.assign({dl:'5–7 Werktage',us:'30 Tage Paid + Organic',pay:'',val:14},S.rc);
@@ -135,7 +171,7 @@ return`<div class="c"><div style="display:flex;justify-content:space-between;ali
 <div class="cal">${['Mo','Di','Mi','Do','Fr','Sa','So'].map(x=>`<div class="h">${x}</div>`).join('')}${h}</div></div>
 <div class="c" style="margin-top:14px"><h2>Eintrag hinzufügen</h2><div class="g2" style="grid-template-columns:1fr 2fr 1fr auto"><input id="ed" type="date"><input id="et" placeholder="z.B. Edit Summer Reel"><select id="ek">${ET.map(x=>`<option>${x}</option>`).join('')}</select><button class="btn" data-ev>+</button></div>
 ${S.cal.map((e,i)=>[e,i]).sort((a,b)=>a[0].d.localeCompare(b[0].d)).map(([e,i])=>`<div class="row" style="grid-template-columns:90px 1fr 80px 28px"><span class="tag">${e.d}</span><span>${esc(e.t)}</span><span class="ev ${e.k}" style="margin:0;text-align:center">${e.k}</span><button class="x" data-del="cal.${i}">×</button></div>`).join('')}</div>`},
-out(){return`<div class="c"><h2>Outreach-Vorlage</h2><textarea data-k="tpl">${esc(S.tpl)}</textarea><p><button class="btn" id="cp">Text kopieren</button></p></div>
+out(){const de=S.tl=='de',k=TK();return`<div class="c"><div class="hh"><h2>Outreach-Vorlage</h2><div class="seg"><button data-tl="en" class="${de?'':'on'}">English</button><button data-tl="de" class="${de?'on':''}">Deutsch</button></div></div><textarea data-k="${k}">${esc(S[k])}</textarea><p style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="cp">Text kopieren</button><button class="btn gh" data-rs>Standardtext laden</button></p></div>
 <div class="c scr" style="margin-top:14px"><h2>Angeschriebene Firmen (${S.leads.length})</h2><div class="mn"><div class="row hd ld l"><span>Firma</span><span>Social-Link</span><span>Datum</span><span>Ergebnis</span><span>Notiz</span><span></span></div>${S.leads.map((l,i)=>`<div class="row ld">${inp(`leads.${i}.n`,l.n,'text','Firma')}${inp(`leads.${i}.u`,l.u,'text','instagram.com/…')}${inp(`leads.${i}.d`,l.d,'date')}${sel(`leads.${i}.s`,l.s,LS)}${inp(`leads.${i}.o`,l.o,'text','Notiz')}<span>${l.s=='Offen'&&l.d&&(Date.now()-new Date(l.d))>6048e5?'<span title="Follow-up fällig" style="color:var(--r)">●</span> ':''}${l.u?`<a href="${esc(/^http/.test(l.u)?l.u:'https://'+l.u)}" target="_blank" rel="noopener" style="color:var(--a);text-decoration:none">↗</a>`:''}<button class="x" data-del="leads.${i}">×</button></span></div>`).join('')}</div><p><button class="btn" data-add="leads">+ Firma</button></p></div>`}};
 function render(){document.getElementById('nav').innerHTML=tabs.map(([k,n])=>`<button class="${S.view==k?'on':''}" data-v="${k}">${n}</button>`).join('');document.getElementById('v').innerHTML=V[S.view]();document.getElementById('dt').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'})}
 const set=(k,v)=>{const p=k.split('.');if(p.length==1){S[k]=v;return}if(p.length==2){S[p[0]][p[1]]=typeof S[p[0]][p[1]]=='number'?+v:v;return}const o=S[p[0]][p[1]],f=p[2];o[f]=typeof o[f]=='number'?+v:v};
@@ -147,10 +183,12 @@ else if(D.add){const a=D.add;S[a].push(a=='projects'?{b:'',t:'',d:'',p:0,dl:'',s
 else if(D.pre){const m=PRE[D.pre];S.prices.forEach(p=>p.q=m[p.n]||0)}
 else if(D.mo){S.m+=+D.mo;if(S.m<0){S.m=11;S.y--}if(S.m>11){S.m=0;S.y++}}
 else if(D.ev!==undefined){const d=ed.value,x=et.value.trim();if(!d||!x)return;S.cal.push({d,t:x,k:ek.value})}
+else if(D.tl){S.tl=D.tl=='de'?'de':'en'}
+else if(D.rs!==undefined){if(!confirm('Vorlage auf den Standardtext zurücksetzen?'))return;S[TK()]=TD[S.tl]}
 else if(t.id=='cr'){navigator.clipboard?.writeText(window.RT).then(()=>{t.textContent='Kopiert ✓';setTimeout(()=>t.textContent='Beleg kopieren',1500)}).catch(()=>{});return}
-else if(t.id=='cp'){navigator.clipboard?.writeText(S.tpl).then(()=>{t.textContent='Kopiert ✓';setTimeout(()=>t.textContent='Text kopieren',1500)}).catch(()=>{});return}
+else if(t.id=='cp'){navigator.clipboard?.writeText(S[TK()]).then(()=>{t.textContent='Kopiert ✓';setTimeout(()=>t.textContent='Text kopieren',1500)}).catch(()=>{});return}
 else return;save();render()});
 render();
-const pull=()=>fetch('/api/data').then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{if(d&&d.prices){const v=S.view;Object.assign(S,d);S.view=v;try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}render();sync('☁ Synchron')}else save()}).catch(()=>sync('⚠ Offline – lokal gesichert'));
+const pull=()=>fetch('/api/data').then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{if(d&&d.prices){const v=S.view,l=S.tl;Object.assign(S,d);S.view=v;S.tl=l;fix();try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}render();sync('☁ Synchron')}else save()}).catch(()=>sync('⚠ Offline – lokal gesichert'));
 pull();document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!tm)pull()});
 </script></body></html>
