@@ -47,7 +47,7 @@ ${err ? '<div class="e">Falsches Passwort</div>' : ''}
 
 export default {
   async fetch(request, env) {
-    if (!env.PASSWORD) return new Response('PASSWORD secret is not set', { status: 500 });
+    if (!env.PASSWORD) return new Response('PASSWORD missing. Worker sees: ' + Object.keys(env).join(', '), { status: 500 });
     const url = new URL(request.url);
 
     if (url.pathname === '/login' && request.method === 'POST') {
