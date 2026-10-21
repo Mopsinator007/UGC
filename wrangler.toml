@@ -1,0 +1,9 @@
+name = "ugc-hq"
+compatibility_date = "2026-10-21"
+
+[vars]
+OWNER_EMAIL = "contact@itsmadebymo.com" # Trage hier optional deine E-Mail ein
+
+[[kv_namespaces]]
+binding = "KV"
+id = "e7744b2df4294d7987b1edefefadaef2"
