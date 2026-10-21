@@ -1,6 +1,13 @@
 name = "ugc-hq"
 compatibility_date = "2026-10-21"
 
+# Hier wird definiert, wo deine Backend-Funktion liegt (laut deiner Ordnerstruktur)
+main = "functions/api/data.js"
+
+# Hier wird definiert, wo deine Frontend-Dateien liegen (das Root-Verzeichnis ".")
+[assets]
+directory = "."
+
 [vars]
 OWNER_EMAIL = "contact@itsmadebymo.com" # Trage hier optional deine E-Mail ein
 
