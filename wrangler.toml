@@ -4,7 +4,9 @@ compatibility_date = "2026-10-21"
 
 [assets]
 directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
 
 [[kv_namespaces]]
 binding = "KV"
-id = "235fa5b2d2b3442d89c5be8a80276c4c"
+id = "PASTE_YOUR_KV_NAMESPACE_ID"
