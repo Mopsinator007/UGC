@@ -1,77 +1,89 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>UGC HQ · @itsmadebymo</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0c0c0e"><meta name="robots" content="noindex"><title>UGC HQ · @itsmadebymo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f1ec;--s:#fff;--s2:#ece8e1;--t:#14120f;--m:#7a746a;--b:#ddd7cc;--a:#b8912f;--g:#238a5c;--r:#c9473b;--bl:#3b6fd4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a0a0c;--s:#141417;--s2:#1c1c21;--t:#f3efe7;--m:#8d877c;--b:#2a2a30;--a:#d8b45a;--g:#43c28d;--r:#ef6b5e;--bl:#7aa2f7}}
-:root[data-theme=dark]{--bg:#0a0a0c;--s:#141417;--s2:#1c1c21;--t:#f3efe7;--m:#8d877c;--b:#2a2a30;--a:#d8b45a;--g:#43c28d;--r:#ef6b5e;--bl:#7aa2f7}
-*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--t);font:14px/1.5 Inter,system-ui,sans-serif;background-image:radial-gradient(900px 400px at 85% -10%,color-mix(in srgb,var(--a) 14%,transparent),transparent)}
-.w{max-width:1080px;margin:auto;padding:28px 18px 80px}
-header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:22px}
-h1{font:400 clamp(34px,6vw,54px)/1 'Instrument Serif',Georgia,serif;margin:0;letter-spacing:-.5px}h1 i{color:var(--a)}
-.sub{color:var(--m);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-nav{display:flex;gap:4px;background:var(--s);border:1px solid var(--b);border-radius:14px;padding:4px;overflow-x:auto;margin-bottom:22px}
-nav button{flex:1;white-space:nowrap;border:0;background:none;color:var(--m);padding:10px 14px;border-radius:10px;font:500 13px Inter,sans-serif;cursor:pointer}
-nav button.on{background:var(--t);color:var(--bg)}
-.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:22px}
-.c{background:var(--s);border:1px solid var(--b);border-radius:18px;padding:18px}
-.kp .c b{display:block;font:400 34px 'Instrument Serif',serif;margin-top:4px}.kp span,.l{color:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-h2{font:400 26px 'Instrument Serif',serif;margin:0 0 14px}
-.row{display:grid;gap:8px;align-items:center;padding:10px 0;border-top:1px solid var(--b)}
-.hd{border:0;padding:0 0 4px}
-input,select,textarea{width:100%;background:var(--s2);color:var(--t);border:1px solid transparent;border-radius:10px;padding:9px 10px;font:inherit;min-width:0}
-input:focus,select:focus,textarea:focus{outline:0;border-color:var(--a)}
+:root{color-scheme:dark;--bg:#0c0c0e;--s:rgba(18,18,21,.76);--s2:rgba(255,255,255,.05);--t:#eeece9;--m:#95929a;--b:rgba(255,255,255,.1);--b2:rgba(255,255,255,.22);--a:#ff3d3d;--f:#e5242a;--g:#43c28d;--bl:#5b8cff;--d:"Archivo","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--t);font:400 15px/1.5 var(--d);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.gr{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 45% 40% at 85% 0%,rgba(255,61,61,.12),transparent 70%),radial-gradient(ellipse 40% 35% at 0% 100%,rgba(90,10,22,.25),transparent 70%),linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) -1px -1px/16px 16px,linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) -1px -1px/16px 16px;-webkit-mask-image:radial-gradient(130% 90% at 50% 0%,#000 30%,rgba(0,0,0,.35));mask-image:radial-gradient(130% 90% at 50% 0%,#000 30%,rgba(0,0,0,.35))}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.w{max-width:1100px;margin:auto;padding:calc(28px + env(safe-area-inset-top,0px)) 20px calc(80px + env(safe-area-inset-bottom,0px))}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+h1{font:800 clamp(40px,7vw,68px)/.95 var(--d);font-stretch:112%;letter-spacing:-.04em;margin:0;text-shadow:0 0 60px rgba(255,61,61,.25)}h1 i{color:var(--a);font-style:normal}
+.sub{display:flex;align-items:center;gap:12px;color:var(--m);font-size:14px;font-weight:500;margin-bottom:12px}.sub:before{content:"";width:9px;height:9px;background:var(--a)}
+.l,.kp span{color:var(--m);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+nav{display:flex;gap:4px;background:var(--s);border:1px solid var(--b);padding:4px;overflow-x:auto;margin-bottom:24px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+nav button{flex:1;white-space:nowrap;border:0;background:none;color:var(--m);padding:11px 16px;font:600 14px var(--d);cursor:pointer;transition:color .2s,background .2s}
+nav button:hover{color:var(--t)}nav button.on{background:var(--f);color:#fff}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:24px}
+.c{position:relative;background:var(--s);border:1px solid var(--b);padding:20px;transition:border-color .3s,box-shadow .3s}
+.kp .c:hover{border-color:var(--a);box-shadow:0 14px 34px -16px rgba(255,61,61,.45);transform:translateY(-3px)}.kp .c{transition:.3s}
+.kp .c b{display:block;font:800 clamp(24px,3vw,38px)/1.15 var(--d);font-stretch:110%;letter-spacing:-.03em;margin-top:6px;white-space:nowrap}
+h2{font:800 24px/1.1 var(--d);font-stretch:108%;letter-spacing:-.03em;margin:0 0 16px}
+.row{display:grid;gap:8px;align-items:center;padding:10px 0;border-top:1px solid var(--b)}.hd{border:0;padding:0 0 4px}
+input,select,textarea{width:100%;background:var(--s2);color:var(--t);border:1px solid var(--b);border-radius:0;padding:10px 12px;font:inherit;min-width:0;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--a);box-shadow:0 0 0 3px rgba(255,61,61,.17)}
+select{appearance:none;-webkit-appearance:none;padding-right:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23ff3d3d' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+select option{background:#121215;color:var(--t)}
 textarea{min-height:230px;resize:vertical;line-height:1.6}
-.btn{background:var(--a);color:#14120f;border:0;border-radius:10px;padding:10px 16px;font:600 13px Inter,sans-serif;cursor:pointer;white-space:nowrap}
-.gh{background:var(--s2);color:var(--t)}.x{background:none;border:0;color:var(--m);cursor:pointer;font-size:18px}.x:hover{color:var(--r)}
+.btn{background:var(--f);color:#fff;border:0;padding:12px 20px;font:600 14px var(--d);cursor:pointer;white-space:nowrap;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);transition:background .25s,color .25s,transform .2s}
+.btn:hover{background:var(--t);color:var(--bg)}.btn:active{transform:scale(.96)}
+.gh{background:transparent;color:var(--t);box-shadow:inset 0 0 0 1px var(--b2);clip-path:none}.gh:hover{background:transparent;color:var(--t);box-shadow:inset 0 0 0 1px var(--a)}
+.x{background:none;border:0;color:var(--m);cursor:pointer;font-size:20px;transition:color .2s}.x:hover{color:var(--a)}
 .scr{overflow-x:auto}.mn{min-width:720px}
 .p{grid-template-columns:1.2fr 1.4fr .7fr .9fr 1fr 28px}
-.pr{grid-template-columns:2fr .9fr .7fr .9fr 28px}
 .ld{grid-template-columns:1.2fr 1.4fr .9fr 1fr 1.3fr 28px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){.g2{grid-template-columns:1fr}}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.cal .d{min-height:78px;background:var(--s2);border-radius:10px;padding:5px;font-size:11px;overflow:hidden}.cal .d.t{outline:1px solid var(--a)}.cal .d.o{opacity:.35}
-.cal .h{text-align:center;color:var(--m);font-size:11px;padding:4px}
-.ev{display:block;margin-top:3px;padding:2px 5px;border-radius:5px;background:var(--a);color:#14120f;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ev.Dreh{background:var(--bl);color:#fff}.ev.Edit{background:#8b5cf6;color:#fff}.ev.Deadline{background:var(--r);color:#fff}.ev.Call{background:var(--g);color:#fff}
-.tot{display:flex;justify-content:space-between;font:400 28px 'Instrument Serif',serif;padding-top:14px;border-top:1px solid var(--b)}
-.tag{display:inline-block;font-size:11px;color:var(--m)}
-@media(max-width:760px){.p,.pr,.ld{min-width:640px}}
 .pq{grid-template-columns:2fr .9fr .7fr 28px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .d{min-height:80px;background:var(--s2);border:1px solid transparent;padding:6px;font-size:12px;overflow:hidden}.cal .d.t{border-color:var(--a)}.cal .d.o{opacity:.35}
+.cal .h{text-align:center;color:var(--m);font-size:12px;padding:4px}
+.ev{display:block;margin-top:3px;padding:2px 6px;background:var(--f);color:#fff;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev.Dreh{background:var(--bl)}.ev.Edit{background:#8b5cf6}.ev.Deadline{background:#7d1218}.ev.Call{background:#238a5c}
+.tag{display:inline-block;font-size:12px;color:var(--m)}
 .hh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}.hh h2{margin:0}
-.seg{display:inline-flex;gap:4px;background:var(--s2);border-radius:12px;padding:4px}
-.seg button{border:0;background:none;color:var(--m);padding:8px 16px;border-radius:9px;font:500 13px Inter,sans-serif;cursor:pointer}
-.seg button.on{background:var(--t);color:var(--bg)}
-.rc{margin-top:14px;background:#fbfaf6;color:#1a1a1a;font:12.5px/1.6 'Courier New',ui-monospace,monospace;padding:26px 22px 30px;position:relative;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.seg{display:inline-flex;gap:4px;background:var(--s2);padding:4px}
+.seg button{border:0;background:none;color:var(--m);padding:8px 16px;font:600 14px var(--d);cursor:pointer}.seg button.on{background:var(--f);color:#fff}
+/* calculator */
+.fr{display:grid;grid-template-columns:1fr 130px;gap:12px;align-items:center;padding:9px 0;border-top:1px solid var(--b)}.fr small{display:block;color:var(--m);font-size:12px}
+.cl{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--b)}.cl small{display:block;color:var(--m);font-size:12px}.cl b{white-space:nowrap}
+.big{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:18px 0 4px;border-top:1px solid var(--a)}
+.big b{font:800 clamp(30px,4.4vw,46px)/1 var(--d);font-stretch:110%;letter-spacing:-.04em;white-space:nowrap;text-shadow:0 0 40px rgba(255,61,61,.35)}
+.hl{margin-top:14px;padding:14px;background:rgba(255,61,61,.07);border:1px dashed var(--a);display:flex;justify-content:space-between;gap:10px}
+/* receipt */
+.rc{margin-top:14px;background:#fbfaf6;color:#1a1a1a;font:12.5px/1.6 'Courier New',ui-monospace,monospace;padding:26px 22px 30px;position:relative;box-shadow:0 18px 40px rgba(0,0,0,.45)}
 .rc:before,.rc:after{content:"";position:absolute;left:0;right:0;height:12px;background-size:12px 12px}
 .rc:before{top:-12px;background-image:linear-gradient(45deg,#fbfaf6 6px,transparent 0),linear-gradient(315deg,#fbfaf6 6px,transparent 0);background-position:-6px 0,-6px 0}
 .rc:after{bottom:-12px;background-image:linear-gradient(135deg,#fbfaf6 6px,transparent 0),linear-gradient(225deg,#fbfaf6 6px,transparent 0);background-position:-6px 0,-6px 0}
 .rl{display:flex;justify-content:space-between;align-items:center;gap:10px}.rl span:last-child{white-space:nowrap}
 .rd{border-top:1px dashed #1a1a1a;margin:11px 0}.rb{font-weight:700;font-size:15px}
-.rc input,.rc select{width:44px;background:transparent;color:#1a1a1a;border:0;border-bottom:1px dashed #999;border-radius:0;padding:0 2px;font:inherit;text-align:center}.rc select{width:auto}
-.rc textarea{min-height:48px;background:transparent;color:#1a1a1a;border:1px dashed #999;border-radius:0;font:inherit;text-align:center;padding:6px}
+.rc input,.rc select{width:44px;background:transparent;color:#1a1a1a;border:0;border-bottom:1px dashed #999;box-shadow:none;padding:0 2px;font:inherit;text-align:center}.rc select{width:auto;background-image:none;padding-right:2px}
+.rc textarea{min-height:48px;background:transparent;color:#1a1a1a;border:1px dashed #999;font:inherit;text-align:center;padding:6px}
+.bar{height:40px;margin:14px 6px 8px;background:repeating-linear-gradient(90deg,#1a1a1a 0 2px,transparent 2px 4px,#1a1a1a 4px 5px,transparent 5px 8px,#1a1a1a 8px 11px,transparent 11px 13px)}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+#v>*{animation:up .6s cubic-bezier(.2,.7,.2,1) both}#v>*:nth-child(2){animation-delay:.08s}#v>*:nth-child(3){animation-delay:.16s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media(max-width:760px){
-.w{padding:16px 12px 100px}h1{font-size:38px}
+.g2{grid-template-columns:1fr}
+.w{padding:calc(16px + env(safe-area-inset-top,0px)) 14px 110px}h1{font-size:44px}
 input,select,textarea{font-size:16px}
-nav{position:fixed;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:20;margin:0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-nav button{padding:11px 6px;font-size:11px}
+nav{position:fixed;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:20;margin:0;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+nav button{padding:12px 6px;font-size:11px}
 .kp{grid-template-columns:1fr 1fr}.kp .c b{font-size:26px}
-.p,.pr,.ld,.pq,.mn{min-width:0!important}.row.hd{display:none}
-.row.p,.row.ld,.row.pq{grid-template-columns:1fr 1fr;padding:12px;border:1px solid var(--b);border-radius:14px;margin-bottom:8px;background:var(--s2)}
+.p,.pq,.ld,.mn{min-width:0!important}.row.hd{display:none}
+.row.p,.row.ld,.row.pq{grid-template-columns:1fr 1fr;padding:12px;border:1px solid var(--b);margin-bottom:8px;background:var(--s2)}
 .row.pq{grid-template-columns:1fr 1fr 40px}.row.pq>:first-child{grid-column:1/-1}
-.row.p>:nth-child(2),.row.ld>:nth-child(2),.row.ld>:nth-child(5){grid-column:1/-1}
-.row.p>:first-child,.row.ld>:first-child{grid-column:1/-1}
+.row.p>:nth-child(2),.row.ld>:nth-child(2),.row.ld>:nth-child(5),.row.p>:first-child,.row.ld>:first-child{grid-column:1/-1}
 .row.ld>:last-child{grid-column:1/-1;text-align:right}
-.row.p input,.row.p select,.row.ld input,.row.ld select,.row.pq input{background:var(--s)}
-.x{font-size:24px;width:40px;height:40px}.btn{padding:12px 16px}
+.x{font-size:24px;width:40px;height:40px}
 [style*=sticky]{position:static!important}
 .g2[style*="1fr 2fr"]{grid-template-columns:1fr 1fr!important}
 .cal{gap:3px}.cal .d{min-height:46px;padding:4px}
 .cal .ev{font-size:0;height:6px;width:6px;padding:0;display:inline-block;border-radius:50%;margin:3px 2px 0 0}
-.rc{padding:22px 16px 26px}.c{padding:14px}
+.rc{padding:22px 16px 26px}.c{padding:16px}.fr{grid-template-columns:1fr 110px}
 }
-.bar{height:40px;margin:14px 6px 8px;background:repeating-linear-gradient(90deg,#1a1a1a 0 2px,transparent 2px 4px,#1a1a1a 4px 5px,transparent 5px 8px,#1a1a1a 8px 11px,transparent 11px 13px)}
-</style></head><body><div class="w">
+</style></head><body><div class="gr"></div><div class="w">
 <header><div><div class="sub">Privates Dashboard · @itsmadebymo</div><h1>UGC <i>HQ</i></h1></div><div style="text-align:right"><div class="l" id="dt"></div><div class="l" id="sy" style="margin-top:8px">☁ Verbinde…</div></div></header>
 <nav id="nav"></nav><div id="v"></div></div>
 <script>
@@ -103,6 +115,7 @@ Mail: Content@itsmadebymo.com
 Liebe Grüße
 Mo`};
 const PS=['Briefing','Dreh','Edit','Review','Geliefert','Bezahlt'],LS=['Offen','Antwort','Kein Rücklauf','Call','Deal','Absage'],ET=['Dreh','Edit','Posten','Deadline','Call'];
+const CD={film:4,edit:6,rate:35,trav:1,km:60,cons:7.5,gas:1.75,rt:1,tp:50,gear:20,extra:0,buf:10,vat:'0'};
 let S={view:'home',y:new Date().getFullYear(),m:new Date().getMonth(),
 projects:[{b:'Beispiel Brand',t:'Summer Launch Reel',d:'3 UGC Videos',p:750,dl:'',s:'Edit'}],
 prices:[{n:'UGC Video (15–30s)',p:250,q:0,r:0},{n:'Cinematic Ad (30–60s)',p:600,q:0,r:0},{n:'Hook-Variante',p:80,q:0,r:0},{n:'Foto-Paket (5 Bilder)',p:150,q:0,r:0},{n:'Raw Footage',p:100,q:0,r:0},{n:'Usage Rights (30 Tage)',p:150,q:0,r:0},{n:'Spark Ads / Whitelisting',p:200,q:0,r:0},
@@ -113,7 +126,7 @@ const TK=()=>S.tl=='de'?'tpl':'tplEn';
 const fix=()=>{
 if(/I'm Mo/.test(S.tpl)){S.tplEn=S.tpl;S.tpl=TD.de}
 S.tpl=S.tpl.replace('[Link]',PL);S.tplEn=S.tplEn.replace('[Link]',PL);
-if(S.tl!='de')S.tl='en'};
+if(S.tl!='de')S.tl='en';S.calc=Object.assign({},CD,S.calc||{})};
 fix();
 if(!S.rc)S.rc={c:'',rush:0,disc:0,vat:'0',term:3,n:'Gültig 14 Tage · Zahlung in 7 Tagen · 2 Revisionen inkl.'};
 if(!S.mig){S.mig=1;[['Konzept & Skript',120],['Extra Revision',50],['Vertical Cut-Downs (3×)',90],['Untertitel / Captions',40],['Musik-Lizenz',30],['Drohnen-Aufnahmen',150],['Exklusivität (30 Tage)',200],['Reisekosten / Spesen',0]].forEach(([n,p])=>S.prices.push({n,p,q:0,r:0}))}
@@ -125,7 +138,13 @@ const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}clearTim
 const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
 const inp=(k,v,t='text',ph='')=>`<input data-k="${k}" type="${t}" value="${esc(v)}" placeholder="${ph}">`;
 const sel=(k,v,o)=>`<select data-k="${k}">${o.map(x=>`<option${x==v?' selected':''}>${x}</option>`).join('')}</select>`;
-const tabs=[['home','Übersicht'],['proj','Projekte'],['price','Preise & Retainer'],['cal','Kalender'],['out','Outreach']];
+const tabs=[['home','Übersicht'],['proj','Projekte'],['price','Preise'],['calc','Rechner'],['cal','Kalender'],['out','Outreach']];
+const f2=n=>(+n||0).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+function calcRes(){const c=S.calc,n=x=>+x||0,m=c.rt==1?2:1,fl=n(c.film)*n(c.rate),ed=n(c.edit)*n(c.rate),th=n(c.trav)*m,tr=th*n(c.rate)*n(c.tp)/100,km=n(c.km)*m,fu=km*n(c.cons)/100*n(c.gas),gr=n(c.gear),ex=n(c.extra),sub=fl+ed+tr+fu+gr+ex,bf=sub*n(c.buf)/100,net=sub+bf,vat=c.vat=='19'?net*.19:0,tot=net+vat,hrs=n(c.film)+n(c.edit)+th,eff=hrs?net/hrs:0,mine=fl+ed+tr+bf;
+const L=(a,b,v)=>`<div class="cl"><span>${a}<small>${b}</small></span><b>${f2(v)}</b></div>`;window.CP=net;
+return L('Dreh',`${n(c.film)} h × ${f2(c.rate)}`,fl)+L('Schnitt / Edit',`${n(c.edit)} h × ${f2(c.rate)}`,ed)+L('Anfahrtszeit',`${th} h × ${n(c.tp)}% vom Stundensatz`,tr)+L('Sprit',`${km} km · ${n(c.cons)} l/100 km · ${f2(c.gas)}/l`,fu)+L('Equipment / Verschleiß','',gr)+L('Sonstiges','Parken, Essen …',ex)+L('Puffer',`${n(c.buf)}%`,bf)
++`<div class="big"><span class="l">Preis netto</span><b>${f2(net)}</b></div>`+(vat?L('MwSt 19%','',vat)+`<div class="cl"><span class="l">Brutto</span><b>${f2(tot)}</b></div>`:'<div class="tag">§19 UStG: keine MwSt</div>')
++`<div class="hl"><span>Effektiv pro Stunde<small class="tag" style="display:block">inkl. Anfahrt, ${hrs} h gesamt</small></span><b>${f2(eff)}</b></div><div class="hl" style="border-color:var(--g);background:rgba(67,194,141,.07)"><span>Dein Verdienst<small class="tag" style="display:block">ohne Sprit &amp; Equipment</small></span><b>${f2(mine)}</b></div>`}
 const V={
 home(){const a=S.projects.filter(p=>!['Geliefert','Bezahlt'].includes(p.s)).length,o=S.projects.filter(p=>p.s!='Bezahlt').reduce((x,p)=>x+ +p.p,0),mrr=S.prices.filter(p=>p.r).reduce((x,p)=>x+p.p*p.q,0),ans=S.leads.length?Math.round(100*S.leads.filter(l=>['Antwort','Call','Deal','Absage'].includes(l.s)).length/S.leads.length):0;
 const up=S.cal.filter(e=>e.d>=new Date().toISOString().slice(0,10)).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,6);
@@ -133,6 +152,12 @@ return`<div class="kp"><div class="c"><span>Aktive Projekte</span><b>${a}</b></d
 <div class="g2"><div class="c"><h2>Als Nächstes</h2>${up.map(e=>`<div class="row" style="grid-template-columns:90px 1fr auto"><span class="tag">${e.d.split('-').reverse().slice(0,2).join('.')}</span><span>${esc(e.t)}</span><span class="ev ${e.k}" style="margin:0">${e.k}</span></div>`).join('')||'<p class="tag">Noch nichts geplant.</p>'}</div>
 <div class="c"><h2>Pipeline</h2>${PS.map(s=>`<div class="row" style="grid-template-columns:1fr auto"><span>${s}</span><b>${S.projects.filter(p=>p.s==s).length}</b></div>`).join('')}</div></div>`},
 proj(){return`<div class="c scr"><h2>Projekte</h2><div class="mn"><div class="row hd p l"><span>Marke</span><span>Projekt</span><span>Preis</span><span>Deadline</span><span>Status</span><span></span></div>${S.projects.map((p,i)=>`<div class="row p">${inp(`projects.${i}.b`,p.b,'text','Marke')}${inp(`projects.${i}.t`,p.t,'text','Titel / Deliverables')}${inp(`projects.${i}.p`,p.p,'number')}${inp(`projects.${i}.dl`,p.dl,'date')}${sel(`projects.${i}.s`,p.s,PS)}<button class="x" data-del="projects.${i}">×</button></div>`).join('')}</div><p><button class="btn" data-add="projects">+ Projekt</button></p></div>`},
+calc(){const c=S.calc,F=(k,a,b,st='any')=>`<div class="fr"><span>${a}<small>${b}</small></span><input data-k="calc.${k}" type="number" inputmode="decimal" step="${st}" min="0" value="${c[k]}"></div>`;
+return`<div class="g2" style="align-items:start"><div class="c"><h2>Videografie-Rechner</h2>
+<div class="l" style="margin-bottom:6px">Arbeitszeit</div>${F('film','Dreh','Stunden vor Ort')}${F('edit','Schnitt / Edit','Stunden')}${F('rate','Stundensatz','€ pro Stunde')}
+<div class="l" style="margin:18px 0 6px">Anfahrt</div>${F('trav','Fahrzeit','Stunden, einfache Strecke')}${F('tp','Fahrzeit bezahlt zu','% vom Stundensatz')}<div class="fr"><span>Strecke<small>Hin &amp; zurück oder nur hin</small></span><select data-k="calc.rt"><option value="1"${c.rt==1?' selected':''}>Hin &amp; zurück</option><option value="0"${c.rt!=1?' selected':''}>Nur hin</option></select></div>${F('km','Entfernung','km, einfache Strecke')}${F('cons','Verbrauch','l pro 100 km','0.1')}${F('gas','Spritpreis','€ pro Liter','0.01')}
+<div class="l" style="margin:18px 0 6px">Extras</div>${F('gear','Equipment / Verschleiß','€ pro Gig')}${F('extra','Sonstiges','€ (Parken, Essen …)')}${F('buf','Puffer / Risiko','% Aufschlag')}<div class="fr"><span>Steuer</span><select data-k="calc.vat"><option value="0"${c.vat!='19'?' selected':''}>§19 UStG (keine MwSt)</option><option value="19"${c.vat=='19'?' selected':''}>MwSt 19%</option></select></div></div>
+<div class="c" style="position:sticky;top:20px"><h2>Dein Preis</h2><div id="cres">${calcRes()}</div><p style="display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0"><button class="btn" data-cp>Als Projekt anlegen</button><button class="btn gh" data-cr>Zurücksetzen</button></p></div></div>`},
 price(){const R=S.rc,P=S.prices.map((p,i)=>[p,i]),one=P.filter(([p])=>!p.r),mo=P.filter(([p])=>p.r),
 f=n=>n.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €',
 sub=one.reduce((x,[p])=>x+p.p*p.q,0),rush=sub*R.rush/100,dis=(sub+rush)*R.disc/100,net=sub+rush-dis,vat=R.vat=='19'?net*.19:0,tot=net+vat,mrr=mo.reduce((x,[p])=>x+p.p*p.q,0),
@@ -160,10 +185,6 @@ ${sl(one).map(ln).join('')||'<div style="text-align:center;opacity:.5">– Menge
 ${mrr?`<div class="rd"></div><div class="rb">MONATLICH · RETAINER</div>${sl(mo).map(ln).join('')}<div class="rl rb"><span>PRO MONAT</span><span>${f(mrr)}</span></div><div class="rl"><span>LAUFZEIT <input type="number" data-k="rc.term" value="${R.term}"> Mon.</span><span>${f(mrr*R.term)}</span></div>`:''}
 <div class="rd"></div><div class="rl"><span>LIEFERZEIT</span><input data-k="rc.dl" value="${esc(R.dl)}" style="width:55%;text-align:right"></div><div class="rl"><span>NUTZUNG</span><input data-k="rc.us" value="${esc(R.us)}" style="width:55%;text-align:right"></div><div class="rl"><span>GÜLTIG <input type="number" data-k="rc.val" value="${R.val}"> TAGE</span><span>bis ${new Date(Date.now()+R.val*864e5).toLocaleDateString('de-DE')}</span></div><div class="rl"><span>ZAHLUNG</span><input data-k="rc.pay" value="${esc(R.pay)}" placeholder="IBAN / PayPal" style="width:62%;text-align:right"></div><div class="rd"></div><textarea data-k="rc.n">${esc(R.n)}</textarea><div class="bar"></div><div style="text-align:center">*** DANKE FÜRS VERTRAUEN ***</div></div>
 <p style="text-align:center"><button class="btn" id="cr">Beleg kopieren</button></p></div></div>`},
-priceOld(){const sg=S.prices.map((p,i)=>[p,i]),row=([p,i])=>`<div class="row pr">${inp(`prices.${i}.n`,p.n)}${inp(`prices.${i}.p`,p.p,'number')}${inp(`prices.${i}.q`,p.q,'number')}<b>${eur(p.p*p.q)}</b><button class="x" data-del="prices.${i}">×</button></div>`,
-t=sg.filter(([p])=>!p.r).reduce((x,[p])=>x+p.p*p.q,0),m=sg.filter(([p])=>p.r).reduce((x,[p])=>x+p.p*p.q,0);
-return`<div class="g2"><div class="c scr"><h2>Einzelpreise</h2><div class="row hd pr l"><span>Leistung</span><span>Preis €</span><span>Menge</span><span>Summe</span><span></span></div>${sg.filter(([p])=>!p.r).map(row).join('')}<p><button class="btn gh" data-add="prices" data-r="0">+ Leistung</button></p><div class="tot"><span>Angebot</span><span>${eur(t)}</span></div></div>
-<div class="c scr"><h2>Retainer</h2><div class="row hd pr l"><span>Paket</span><span>€ / Monat</span><span>Kunden</span><span>MRR</span><span></span></div>${sg.filter(([p])=>p.r).map(row).join('')}<p><button class="btn gh" data-add="prices" data-r="1">+ Paket</button></p><div class="tot"><span>MRR</span><span>${eur(m)}</span></div></div></div>`},
 cal(){const f=new Date(S.y,S.m,1),off=(f.getDay()+6)%7,n=new Date(S.y,S.m+1,0).getDate(),td=new Date().toISOString().slice(0,10);let h='';
 for(let i=0;i<42;i++){const dn=i-off+1,dt=new Date(S.y,S.m,dn),ds=new Date(dt.getTime()-dt.getTimezoneOffset()*6e4).toISOString().slice(0,10);
 h+=`<div class="d${dn<1||dn>n?' o':''}${ds==td?' t':''}">${dt.getDate()}${S.cal.map((e,j)=>e.d==ds?`<span class="ev ${e.k}" title="${esc(e.t)}">${esc(e.t)}</span>`:'').join('')}</div>`}
@@ -172,10 +193,10 @@ return`<div class="c"><div style="display:flex;justify-content:space-between;ali
 <div class="c" style="margin-top:14px"><h2>Eintrag hinzufügen</h2><div class="g2" style="grid-template-columns:1fr 2fr 1fr auto"><input id="ed" type="date"><input id="et" placeholder="z.B. Edit Summer Reel"><select id="ek">${ET.map(x=>`<option>${x}</option>`).join('')}</select><button class="btn" data-ev>+</button></div>
 ${S.cal.map((e,i)=>[e,i]).sort((a,b)=>a[0].d.localeCompare(b[0].d)).map(([e,i])=>`<div class="row" style="grid-template-columns:90px 1fr 80px 28px"><span class="tag">${e.d}</span><span>${esc(e.t)}</span><span class="ev ${e.k}" style="margin:0;text-align:center">${e.k}</span><button class="x" data-del="cal.${i}">×</button></div>`).join('')}</div>`},
 out(){const de=S.tl=='de',k=TK();return`<div class="c"><div class="hh"><h2>Outreach-Vorlage</h2><div class="seg"><button data-tl="en" class="${de?'':'on'}">English</button><button data-tl="de" class="${de?'on':''}">Deutsch</button></div></div><textarea data-k="${k}">${esc(S[k])}</textarea><p style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="cp">Text kopieren</button><button class="btn gh" data-rs>Standardtext laden</button></p></div>
-<div class="c scr" style="margin-top:14px"><h2>Angeschriebene Firmen (${S.leads.length})</h2><div class="mn"><div class="row hd ld l"><span>Firma</span><span>Social-Link</span><span>Datum</span><span>Ergebnis</span><span>Notiz</span><span></span></div>${S.leads.map((l,i)=>`<div class="row ld">${inp(`leads.${i}.n`,l.n,'text','Firma')}${inp(`leads.${i}.u`,l.u,'text','instagram.com/…')}${inp(`leads.${i}.d`,l.d,'date')}${sel(`leads.${i}.s`,l.s,LS)}${inp(`leads.${i}.o`,l.o,'text','Notiz')}<span>${l.s=='Offen'&&l.d&&(Date.now()-new Date(l.d))>6048e5?'<span title="Follow-up fällig" style="color:var(--r)">●</span> ':''}${l.u?`<a href="${esc(/^http/.test(l.u)?l.u:'https://'+l.u)}" target="_blank" rel="noopener" style="color:var(--a);text-decoration:none">↗</a>`:''}<button class="x" data-del="leads.${i}">×</button></span></div>`).join('')}</div><p><button class="btn" data-add="leads">+ Firma</button></p></div>`}};
+<div class="c scr" style="margin-top:14px"><h2>Angeschriebene Firmen (${S.leads.length})</h2><div class="mn"><div class="row hd ld l"><span>Firma</span><span>Social-Link</span><span>Datum</span><span>Ergebnis</span><span>Notiz</span><span></span></div>${S.leads.map((l,i)=>`<div class="row ld">${inp(`leads.${i}.n`,l.n,'text','Firma')}${inp(`leads.${i}.u`,l.u,'text','instagram.com/…')}${inp(`leads.${i}.d`,l.d,'date')}${sel(`leads.${i}.s`,l.s,LS)}${inp(`leads.${i}.o`,l.o,'text','Notiz')}<span>${l.s=='Offen'&&l.d&&(Date.now()-new Date(l.d))>6048e5?'<span title="Follow-up fällig" style="color:var(--a)">●</span> ':''}${l.u?`<a href="${esc(/^http/.test(l.u)?l.u:'https://'+l.u)}" target="_blank" rel="noopener" style="color:var(--a);text-decoration:none">↗</a>`:''}<button class="x" data-del="leads.${i}">×</button></span></div>`).join('')}</div><p><button class="btn" data-add="leads">+ Firma</button></p></div>`}};
 function render(){document.getElementById('nav').innerHTML=tabs.map(([k,n])=>`<button class="${S.view==k?'on':''}" data-v="${k}">${n}</button>`).join('');document.getElementById('v').innerHTML=V[S.view]();document.getElementById('dt').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'})}
 const set=(k,v)=>{const p=k.split('.');if(p.length==1){S[k]=v;return}if(p.length==2){S[p[0]][p[1]]=typeof S[p[0]][p[1]]=='number'?+v:v;return}const o=S[p[0]][p[1]],f=p[2];o[f]=typeof o[f]=='number'?+v:v};
-document.addEventListener('input',e=>{const k=e.target.dataset.k;if(k){set(k,e.target.value);save()}});
+document.addEventListener('input',e=>{const k=e.target.dataset.k;if(k){set(k,e.target.value);save();if(k.startsWith('calc.')&&e.target.tagName=='INPUT'){const r=document.getElementById('cres');if(r)r.innerHTML=calcRes()}}});
 document.addEventListener('change',e=>{if(e.target.dataset.k){save();render()}});
 document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const D=t.dataset;
 if(D.v)S.view=D.v;else if(D.del){const[a,i]=D.del.split('.');S[a].splice(+i,1)}
@@ -185,6 +206,8 @@ else if(D.mo){S.m+=+D.mo;if(S.m<0){S.m=11;S.y--}if(S.m>11){S.m=0;S.y++}}
 else if(D.ev!==undefined){const d=ed.value,x=et.value.trim();if(!d||!x)return;S.cal.push({d,t:x,k:ek.value})}
 else if(D.tl){S.tl=D.tl=='de'?'de':'en'}
 else if(D.rs!==undefined){if(!confirm('Vorlage auf den Standardtext zurücksetzen?'))return;S[TK()]=TD[S.tl]}
+else if(D.cp!==undefined){calcRes();S.projects.push({b:'',t:'Videografie-Gig',d:`${S.calc.film} h Dreh · ${S.calc.edit} h Edit · ${S.calc.km} km`,p:Math.round(window.CP),dl:'',s:'Briefing'});S.view='proj'}
+else if(D.cr!==undefined){if(!confirm('Rechner auf Standardwerte zurücksetzen?'))return;S.calc=Object.assign({},CD)}
 else if(t.id=='cr'){navigator.clipboard?.writeText(window.RT).then(()=>{t.textContent='Kopiert ✓';setTimeout(()=>t.textContent='Beleg kopieren',1500)}).catch(()=>{});return}
 else if(t.id=='cp'){navigator.clipboard?.writeText(S[TK()]).then(()=>{t.textContent='Kopiert ✓';setTimeout(()=>t.textContent='Text kopieren',1500)}).catch(()=>{});return}
 else return;save();render()});
